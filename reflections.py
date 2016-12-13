@@ -22,7 +22,6 @@ def main():
 		e = np.matrix([0 if i != k else 1 for i in range(dim)]).T
 		try:
 			w = omega(s, e)
-			V = np.matrix(np.diag([float(1) for i in range(dim)]) - 2 * np.dot(w, w.T))
 			m -= 2 * np.dot(w, np.dot(w.T, m))
 			f -= 2 * np.dot(w, np.dot(w.T, f))
 		except ZeroDivisionError:
