@@ -20,7 +20,6 @@ def main():
 		for i in range(len(x)):
 			x[i] = sum([x[j] * m[i, j] for j in range(len(x))]) + f[i]
 		iteration += 1
-		pass
 	r = np.array(np.dot(a, x) - b).T[0]
 	with open('summary/seidel.txt', mode='w+') as file:
 		file.write('x:')
@@ -29,6 +28,7 @@ def main():
 		[file.write('{:<15.5e}'.format(e)) for e in r]
 		file.write('\n||r|| = {:e}'.format(lg.norm(r.T, ord=np.inf)))
 		file.write('\niteration: {:d}'.format(iteration))
+	pass
 
 
 if __name__ == '__main__':
